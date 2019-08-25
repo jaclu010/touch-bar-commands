@@ -7,17 +7,107 @@
 		"vscode": "^1.37.0"
 	},
 	"categories": [
-		"Other"
+		"Keymaps"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:touch-bar-commands.execute.cmd1",
+		"onCommand:touch-bar-commands.execute.cmd2",
+		"onCommand:touch-bar-commands.execute.cmd3",
+		"onCommand:touch-bar-commands.execute.cmd4"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"commands": [
+		{
+			"command": "touch-bar-commands.execute.cmd1",
+			"title": "✎1",
+			"when": "config.touch-bar-commands.activate.cmd1",
+			"category": "Touch Bar Commands"
+		},
+		{
+			"command": "touch-bar-commands.execute.cmd2",
+			"title": "✎2",
+			"when": "config.touch-bar-commands.activate.cmd2",
+			"category": "Touch Bar Commands"
+		},
+		{
+			"command": "touch-bar-commands.execute.cmd3",
+			"title": "✎3",
+			"when": "config.touch-bar-commands.activate.cmd3",
+			"category": "Touch Bar Commands"
+		},
+		{
+			"command": "touch-bar-commands.execute.cmd4",
+			"title": "✎4",
+			"when": "config.touch-bar-commands.activate.cmd4",
+			"category": "Touch Bar Commands"
+		}
+	],
+		"menus": {
+			"touchBar": [
+				{
+					"command": "touch-bar-commands.execute.cmd1",
+					"when": "config.touch-bar-commands.activate.cmd1"
+				},
+				{
+					"command": "touch-bar-commands.execute.cmd2",
+					"when": "config.touch-bar-commands.activate.cmd2"
+				},
+				{
+					"command": "touch-bar-commands.execute.cmd3",
+					"when": "config.touch-bar-commands.activate.cmd3"
+				},
+				{
+					"command": "touch-bar-commands.execute.cmd4",
+					"when": "config.touch-bar-commands.activate.cmd4"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"type": "object",
+				"title": "Touch Bar Commands",
+				"properties": {
+					"touch-bar-commands.activate.cmd1": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show button for command 1"
+					},
+					"touch-bar-commands.activate.cmd2": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show button for command 2"
+					},
+					"touch-bar-commands.activate.cmd3": {
+						"type": "boolean",
+						"default": false,
+						"description": "Show button for command 3"
+					},
+					"touch-bar-commands.activate.cmd4": {
+						"type": "boolean",
+						"default": false,
+						"description": "Show button for command 4"
+					},
+					"touch-bar-commands.command.1": {
+						"type": "string",
+						"default": "pwd"
+					},
+					"touch-bar-commands.command.2": {
+						"type": "string",
+						"default": "whoami"
+					},
+
+					"touch-bar-commands.command.3": {
+						"type": "string",
+						"default": ""
+					},
+					"touch-bar-commands.command.4": {
+						"type": "string",
+						"default": ""
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
