@@ -18,31 +18,31 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
-		{
-			"command": "touch-bar-commands.execute.cmd1",
-			"title": "✎1",
-			"when": "config.touch-bar-commands.activate.cmd1",
-			"category": "Touch Bar Commands"
-		},
-		{
-			"command": "touch-bar-commands.execute.cmd2",
-			"title": "✎2",
-			"when": "config.touch-bar-commands.activate.cmd2",
-			"category": "Touch Bar Commands"
-		},
-		{
-			"command": "touch-bar-commands.execute.cmd3",
-			"title": "✎3",
-			"when": "config.touch-bar-commands.activate.cmd3",
-			"category": "Touch Bar Commands"
-		},
-		{
-			"command": "touch-bar-commands.execute.cmd4",
-			"title": "✎4",
-			"when": "config.touch-bar-commands.activate.cmd4",
-			"category": "Touch Bar Commands"
-		}
-	],
+			{
+				"command": "touch-bar-commands.execute.cmd1",
+				"title": "✎1",
+				"when": "config.touch-bar-commands.activate.cmd1",
+				"category": "Touch Bar Commands - Command 1"
+			},
+			{
+				"command": "touch-bar-commands.execute.cmd2",
+				"title": "✎2",
+				"when": "config.touch-bar-commands.activate.cmd2",
+				"category": "Touch Bar Commands - Command 2"
+			},
+			{
+				"command": "touch-bar-commands.execute.cmd3",
+				"title": "✎3",
+				"when": "config.touch-bar-commands.activate.cmd3",
+				"category": "Touch Bar Commands - Command 3"
+			},
+			{
+				"command": "touch-bar-commands.execute.cmd4",
+				"title": "✎4",
+				"when": "config.touch-bar-commands.activate.cmd4",
+				"category": "Touch Bar Commands - Command 4"
+			}
+		],
 		"menus": {
 			"touchBar": [
 				{
@@ -88,6 +88,26 @@
 						"default": false,
 						"description": "Show button for command 4"
 					},
+					"touch-bar-commands.force.cmd1": {
+						"type": "boolean",
+						"default": false,
+						"description": "Force command 1 to be executen in a new terminal window"
+					},
+					"touch-bar-commands.force.cmd2": {
+						"type": "boolean",
+						"default": false,
+						"description": "Force command 2 to be executen in a new terminal window"
+					},
+					"touch-bar-commands.force.cmd3": {
+						"type": "boolean",
+						"default": false,
+						"description": "Force command 3 to be executen in a new terminal window"
+					},
+					"touch-bar-commands.force.cmd4": {
+						"type": "boolean",
+						"default": false,
+						"description": "Force command 4 to be executen in a new terminal window"
+					},
 					"touch-bar-commands.command.1": {
 						"type": "string",
 						"default": "pwd"
@@ -96,7 +116,6 @@
 						"type": "string",
 						"default": "whoami"
 					},
-
 					"touch-bar-commands.command.3": {
 						"type": "string",
 						"default": ""

@@ -1,23 +1,27 @@
 import * as vscode from 'vscode';
+import Command from './command';
 
 export function activate(context: vscode.ExtensionContext) {
-	const commandNo = [1,2,3,4];
-	context.subscriptions.push(...commandNo.map((no): vscode.Disposable => {
-		return vscode.commands.registerCommand(
-			`touch-bar-commands.execute.cmd${no}`,
-			() => {
-				const conf = vscode.workspace.getConfiguration();
-				vscode.commands.executeCommand('workbench.action.terminal.focus');
-				let terminal = vscode.window.activeTerminal;
-				if (!terminal) {
-					terminal = vscode.window.createTerminal({ name: 'Touch Bar Commands' });
-					terminal.show(true);
-				}
-				const cmd = conf.get<string>(`touch-bar-commands.command.${no}`);
-				terminal.sendText(cmd ? cmd : `echo "Error: no command specified for command ${no}"`);
-			}
+	const numCommands = 4;
+	const conf = vscode.workspace.getConfiguration();
+	const terminal = vscode.window.activeTerminal;
+
+	for (let num = 1; num <= numCommands; num++) {
+		let cmd = new Command(
+			num,
+			terminal,
+			conf.get<boolean>(`touch-bar-commands.force.cmd${num}`, false),
+			conf.get<string>(`touch-bar-commands.command.${num}`, '')
 		);
-	}));
+
+		context.subscriptions.push(vscode.commands.registerCommand(
+			`touch-bar-commands.execute.cmd${num}`, () => cmd.execute()
+		));
+
+		context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(
+			e => cmd.update(e)
+		));
+	}
 }
 
 export function deactivate() {}
