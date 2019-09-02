@@ -25,17 +25,13 @@ class Command {
 
   update(e: vscode.ConfigurationChangeEvent) {
     const f =`touch-bar-commands.force.cmd${this.id}`;
-    const a =`touch-bar-commands.activate.cmd${this.id}`;
     const c =`touch-bar-commands.command.${this.id}`;
 
     if (e.affectsConfiguration(f)) {
       this.force = vscode.workspace.getConfiguration().get(f, false);
     }
-    if (e.affectsConfiguration(a)) {
-      this.force = vscode.workspace.getConfiguration().get(a, false);
-    }
     if (e.affectsConfiguration(c)) {
-      this.force = vscode.workspace.getConfiguration().get(c, false);
+      this.cmd = vscode.workspace.getConfiguration().get(c, '');
     }
   }
 }

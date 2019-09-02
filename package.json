@@ -1,13 +1,14 @@
 {
 	"name": "touch-bar-commands",
 	"displayName": "Touch Bar Commands",
-	"description": "",
-	"version": "0.0.1",
+	"description": "Execute custom scripts from your Touch Bar",
+	"version": "1.0.0",
+	"icon": "resources/icon.png",
 	"engines": {
 		"vscode": "^1.37.0"
 	},
 	"categories": [
-		"Keymaps"
+		"Other"
 	],
 	"activationEvents": [
 		"onCommand:touch-bar-commands.execute.cmd1",
@@ -21,25 +22,25 @@
 			{
 				"command": "touch-bar-commands.execute.cmd1",
 				"title": "✎1",
-				"when": "config.touch-bar-commands.activate.cmd1",
+				"when": "config.touch-bar-commands.enable.cmd1",
 				"category": "Touch Bar Commands - Command 1"
 			},
 			{
 				"command": "touch-bar-commands.execute.cmd2",
 				"title": "✎2",
-				"when": "config.touch-bar-commands.activate.cmd2",
+				"when": "config.touch-bar-commands.enable.cmd2",
 				"category": "Touch Bar Commands - Command 2"
 			},
 			{
 				"command": "touch-bar-commands.execute.cmd3",
 				"title": "✎3",
-				"when": "config.touch-bar-commands.activate.cmd3",
+				"when": "config.touch-bar-commands.enable.cmd3",
 				"category": "Touch Bar Commands - Command 3"
 			},
 			{
 				"command": "touch-bar-commands.execute.cmd4",
 				"title": "✎4",
-				"when": "config.touch-bar-commands.activate.cmd4",
+				"when": "config.touch-bar-commands.enable.cmd4",
 				"category": "Touch Bar Commands - Command 4"
 			}
 		],
@@ -47,43 +48,42 @@
 			"touchBar": [
 				{
 					"command": "touch-bar-commands.execute.cmd1",
-					"when": "config.touch-bar-commands.activate.cmd1"
+					"when": "config.touch-bar-commands.enable.cmd1"
 				},
 				{
 					"command": "touch-bar-commands.execute.cmd2",
-					"when": "config.touch-bar-commands.activate.cmd2"
+					"when": "config.touch-bar-commands.enable.cmd2"
 				},
 				{
 					"command": "touch-bar-commands.execute.cmd3",
-					"when": "config.touch-bar-commands.activate.cmd3"
+					"when": "config.touch-bar-commands.enable.cmd3"
 				},
 				{
 					"command": "touch-bar-commands.execute.cmd4",
-					"when": "config.touch-bar-commands.activate.cmd4"
+					"when": "config.touch-bar-commands.enable.cmd4"
 				}
 			]
 		},
 		"configuration": [
 			{
-				"type": "object",
 				"title": "Touch Bar Commands",
 				"properties": {
-					"touch-bar-commands.activate.cmd1": {
+					"touch-bar-commands.enable.cmd1": {
 						"type": "boolean",
 						"default": true,
 						"description": "Show button for command 1"
 					},
-					"touch-bar-commands.activate.cmd2": {
+					"touch-bar-commands.enable.cmd2": {
 						"type": "boolean",
 						"default": true,
 						"description": "Show button for command 2"
 					},
-					"touch-bar-commands.activate.cmd3": {
+					"touch-bar-commands.enable.cmd3": {
 						"type": "boolean",
 						"default": false,
 						"description": "Show button for command 3"
 					},
-					"touch-bar-commands.activate.cmd4": {
+					"touch-bar-commands.enable.cmd4": {
 						"type": "boolean",
 						"default": false,
 						"description": "Show button for command 4"
@@ -91,22 +91,22 @@
 					"touch-bar-commands.force.cmd1": {
 						"type": "boolean",
 						"default": false,
-						"description": "Force command 1 to be executen in a new terminal window"
+						"description": "Force command 1 to be executed in a new terminal window"
 					},
 					"touch-bar-commands.force.cmd2": {
 						"type": "boolean",
 						"default": false,
-						"description": "Force command 2 to be executen in a new terminal window"
+						"description": "Force command 2 to be executed in a new terminal window"
 					},
 					"touch-bar-commands.force.cmd3": {
 						"type": "boolean",
 						"default": false,
-						"description": "Force command 3 to be executen in a new terminal window"
+						"description": "Force command 3 to be executed in a new terminal window"
 					},
 					"touch-bar-commands.force.cmd4": {
 						"type": "boolean",
 						"default": false,
-						"description": "Force command 4 to be executen in a new terminal window"
+						"description": "Force command 4 to be executed in a new terminal window"
 					},
 					"touch-bar-commands.command.1": {
 						"type": "string",
@@ -145,5 +145,13 @@
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.0.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jaclu010/touch-bar-commands"
+	},
+	"homepage": "https://github.com/jaclu010/touch-bar-commands/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/jaclu010/touch-bar-commands/issues"
 	}
 }
