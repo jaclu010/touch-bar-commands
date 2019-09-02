@@ -2,7 +2,7 @@
 	"name": "touch-bar-commands",
 	"displayName": "Touch Bar Commands",
 	"description": "Execute custom scripts from your Touch Bar",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "jjlundberg",
 	"icon": "resources/icon.png",
 	"engines": {
