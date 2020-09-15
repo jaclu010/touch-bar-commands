@@ -17,7 +17,7 @@ class Command {
     vscode.commands.executeCommand('workbench.action.terminal.focus');
 
     if (!this.terminal || this.force) {
-      this.terminal = vscode.window.createTerminal({ name: `Touch Bar Commands ${this.id}`});
+      this.terminal = vscode.window.createTerminal({ name: `Touch Bar CLI Commands ${this.id}`});
     }
     this.terminal.show(true);
     this.terminal.sendText(this.cmd ? this.cmd : `echo "Error: no command specified for command ${this.id}"`);

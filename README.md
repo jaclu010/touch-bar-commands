@@ -1,4 +1,4 @@
-# Touch Bar Commands
+# Touch Bar CLI Commands
 
 This extension allows for 4 MacBook TouchBar icons (✎1-✎4) that each execute a CLI command of choice in VSCodes integrated terminal.
 
@@ -45,12 +45,20 @@ This extension contributes the following settings:
 * `touch-bar-commands.force.cmdX`: force command X to be executed in a new terminal window
 * `touch-bar-commands.command.X`: Command X that is executed
 
+Where `X` is the number of the command (1-4).
+
 ## Known Issues
 
 * The extension cannot dynamically edit the text of the TouchBar icon text due to VSCode limitations.
 
 ## Release Notes
 
-### 1.0.0
+## 1.1.0
 
-Initial release
+- Change display name to 'Touch Bar CLI Commands' to avoid confusion
+- Minor README update
+- Bump `vscode` engine to `1.48`
+
+## 1.0.0
+
+- Initial release
