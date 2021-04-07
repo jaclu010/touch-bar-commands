@@ -2,7 +2,7 @@
 	"name": "touch-bar-commands",
 	"displayName": "Touch Bar CLI Commands",
 	"description": "Execute any cli command from your Touch Bar",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"publisher": "jjlundberg",
 	"icon": "resources/icon.png",
 	"engines": {
