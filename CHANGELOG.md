@@ -2,6 +2,10 @@
 
 All notable changes to the "touch-bar-commands" extension will be documented in this file.
 
+## 1.1.1
+
+- Bump y18n from 4.0.0 to 4.0.1
+
 ## 1.1.0
 
 - Change display name to 'Touch Bar CLI Commands' to avoid confusion
